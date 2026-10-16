@@ -1,0 +1,181 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/*Variables css*/
+:root {
+    --color-bg-dark: #0f2327;      /*Color oscuro de la barra*/
+    --color-bg-page: #f0f0f0;      /* Fondo de la página */
+    --color-active-bg: #ffffff;    /* Fondo de la opción activa */
+    --color-text-dark: #111111;    /* Texto de la opción activa */
+    --color-text-light: #ffffff;   /* Texto del menú e inactivas */
+    --color-hover-bg: #1c3b40;     /* Color al pasar el cursor */
+
+    --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --max-width: 2000px;
+    --transition-speed: 0.3s;
+}
+
+body{
+    background-color: var(--color-bg-page) !important;
+    font-family: var(--font-family);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/*Menu de laptop*/
+.header{
+    width: 100%;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    background-color: var(--color-text-dark); 
+    padding: 0;
+}
+
+.nav-container {
+    width: 100%;
+    position: relative;
+}
+
+.nav {
+    width: 100%;
+}
+
+.nav-list{
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 1;
+    align-items: stretch;
+    justify-content: flex-start;
+}
+
+.nav-item{
+    display: flex;
+    flex: 0 0 auto;
+}
+
+.nav-link{
+    display: flex;
+    align-items: center;
+    padding: 14px 20px;
+    color: var(--color-text-light);
+    text-decoration: none;
+    font-size: 0.15s;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* PSEUDO-CLASES DE CSS */
+/*Cambio de color al pasar el cursor*/
+
+.nav-link:not(.active):hover {
+    background-color: var(--color-hover-bg);
+}
+
+/* .active -> Opción activa seleccionada */
+.nav-link.active {
+    background-color: var(--color-active-bg);
+    color: var(--color-text-dark);
+    font-weight: bold;
+}
+
+/*Menu hamburguesa Mobiles*/
+.menu-toggle{
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 12px 16px;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    align-items: flex-start;
+}
+
+.hamburger-bar{
+    width: 25px;
+    height: 3px;
+    background-color: var(--color-text-light);
+    border-radius: 2px;
+}
+
+/*Contenido*/
+.main-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+
+.image-wrapper{
+    max-width: var(--max-width);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image{
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+/*footer*/
+.footer{
+    width: 100%;
+    max-width: var(--max-width);
+    margin:  0 auto;
+    background-color: var(--color-bg-dark);
+}
+
+.footer-text {
+    color: var(--color-text-light);
+    padding: 15px 20px;
+    font-size: 14px;
+}
+
+/*media query*/
+@media screen and (max-width: 768px){
+    body{
+        padding: 10px;
+    }
+    /*Mostrar Botones*/
+    .menu-toggle{
+        display: flex;
+    }
+    /*ocultar menu de navegacion*/
+    .nav{
+        display: none;
+        width: 100%;
+        border-top: 1px solid rgb(255, 255, 255, 0.1);
+    }
+    /*Mostrar menu js mobil*/
+    .nav.is-open {
+        display: block;
+    }
+
+    /*verticalmente */
+    .nav-list {
+        flex-direction: column;  
+    }
+
+    .nav-item {
+        width: 100%;
+    }
+
+    .nav-link {
+        width: 100%;
+        justify-content: flex-start;
+        padding: 12px 20px;
+    }
+}
+
+body {
+    background-color: red;
+}
